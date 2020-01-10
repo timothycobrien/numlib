@@ -1,2 +1,2 @@
 // Library file for numerical algorithms 
-mod integrate;
+pub mod integrate;

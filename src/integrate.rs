@@ -14,8 +14,9 @@
 pub fn composite_trapezoid(a: f32, b: f32, n: i32, f: fn(f32) -> f32) -> f32{
     let h : f32 = (b-a)/(n as f32);
     let mut sum : f32 = 0.0;
-    for i in 0..n {
+    for i in 1..n {
         sum += f(a+(i as f32)*h);
     }
-    return sum + f(a)/(2 as f32) + f(b)/(2 as f32);
+    return h*(sum + f(a)/(2 as f32) + f(b)/(2 as f32));
 }
+
