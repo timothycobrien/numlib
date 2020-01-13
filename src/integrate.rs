@@ -36,8 +36,12 @@ pub fn composite_trapezoid(a: f64, b: f64, n: i64, f: fn(f64) -> f64) -> f64{
 pub fn simpson_quadrature(a: f64, b: f64, n:i64, f: fn(f64) -> f64) -> f64{
     let h : f64 = (b-a)/(n as f64);
     let mut sum :f64 = 0.0;
-    for i in 1..(n-1){
-        sum += 2.0*f(a+(i as f64)*h) + 4.0*f(a+(i as f64)*h/(2 as f64));
+    for i in 1..n{
+        if i % 2 == 1 {
+            sum += 4.0 * f(a+(i as f64)*h);
+        } else {
+            sum += 2.0 * f(a+(i as f64)*h);
+        }
     }
-    return h*(sum + f(a) + f(b))/(6.0);
+    return h*(sum + f(a) + f(b))/(3.0);
 }
