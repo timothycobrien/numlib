@@ -1,7 +1,7 @@
 # numlib
 [![Build Status](https://travis-ci.com/luke-bhan/numlib.svg?branch=master)](https://travis-ci.com/luke-bhan/numlib)
 
-A simple numerical algorithms library. Contains most of the numerical algorithms found in an introduction to numerical analysis class. Contributions are warmly welcome :). For any requests, please add an issue. Below is a list of implemented and planned methods. 
+A simple numerical algorithms library. Contains most of the numerical algorithms found in an introduction to numerical analysis class. Contributions are warmly welcome. For any requests, please add an issue. Below is a list of implemented and planned methods. 
 
 - [ ] integratation techniques
     - [x] composite trapezoid rule
