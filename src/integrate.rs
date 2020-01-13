@@ -11,12 +11,13 @@
  * The approximate solution to the integral
 */
 
-pub fn composite_trapezoid(a: f32, b: f32, n: i32, f: fn(f32) -> f32) -> f32{
-    let h : f32 = (b-a)/(n as f32);
-    let mut sum : f32 = 0.0;
+pub fn composite_trapezoid(a: f64, b: f64, n: i64, f: fn(f64) -> f64) -> f64{
+    let h : f64 = (b-a)/(n as f64);
+    let mut sum : f64 = 0.0;
     for i in 1..n {
-        sum += f(a+(i as f32)*h);
+        sum += f(a+(i as f64)*h);
     }
-    return h*(sum + f(a)/(2 as f32) + f(b)/(2 as f32));
+    return h*(sum + f(a)/(2 as f64) + f(b)/(2 as f64));
 }
+
 
