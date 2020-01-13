@@ -1,0 +1,13 @@
+language: rust
+rust:
+        - stable
+        - beta
+        - nightly
+jobs:
+        allow_failures:
+                - rust: nightly
+                - rust: beta
+        fast_finish = true
+scipt: 
+        - cargo build --verbose --all
+        - cargo test --verbose --all
