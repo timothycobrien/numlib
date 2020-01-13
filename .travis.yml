@@ -1,34 +1,20 @@
-dist: xenial
+dist: bionic
 os: linux
 
 language: rust
 cache: cargo
 
-matrix:
+jobs:
   fast_finish: true
 
   include:
-    - name: "Stable - LintFormat"
+    - name: "Stable"
       rust: stable
-      before_script:
-        - rustup component add clippy || cargo install --git
-          https://github.com/rust-lang/rust-clippy/ --force clippy
-        - rustup component add rustfmt
-      script: scripts/check lf
+      script: 
+        - cargo build --verbose --all
+        - cargo test --verbose --all
 
-    - name: "Stable - Test"
-      rust: stable
-      script: scripts/check test
-
-    - name: "Nightly - LintFormat"
-      rust: nightly
-      before_script:
-        - rustup component add clippy || cargo install --git
-          https://github.com/rust-lang/rust-clippy/ --force clippy
-        - rustup component add rustfmt
-      script: scripts/check lf
-
-    - name: "Nightly - Test"
+    - name: "Nightly"
       rust: nightly
       script: 
         - cargo build --verbose --all
