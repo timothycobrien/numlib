@@ -8,8 +8,6 @@ A simple numerical algorithms library. Contains most of the numerical algorithms
     - [x] simpsons rule
     - [ ] adaptive simpsons rule
     - [x] 3/8 simpson's rule
-    - [ ] Composite 3/8 simpson's rule
-    - [ ] midpoint rule
 - [ ] ODE Solvers
     - [ ] Runge-Kutta 2
     - [ ] Runge-Kutta 4 (Explicit)
