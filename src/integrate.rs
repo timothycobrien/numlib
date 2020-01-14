@@ -63,16 +63,12 @@ pub fn three_eighths_simpson(a: f64, b: f64, n: i64, f: fn(f64) -> f64) -> f64{
     let mut sum : f64 = 0.0;
     for i in 1..n{
         if i % 3 == 0 {
-            sum += 2*f(a+(i as f64)*h);
+            sum += 2.0*f(a+(i as f64)*h);
         } else{
-            sum += 3*f(a+(i as f64)*h);
+            sum += 3.0*f(a+(i as f64)*h);
         }
     }
     return 3.0*h*sum/8.0;
 }
 
 
-
-
-
-}
