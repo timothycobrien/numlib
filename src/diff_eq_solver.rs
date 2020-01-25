@@ -1,5 +1,27 @@
 // implentation of solving ODEs
 
+
+/* Euler's (RK1)
+ * Function: Performs a runge-kutta interation solve of first order for approximating diff eqs
+ * Parameters:
+ * deriv - ther derivative of the function
+ * x0 - the inital function point
+ * n - the number of steps
+ * x - the point to approximate at
+ * y - the initial y value
+ * Returns: 
+ * The approximate solution to the ode at x
+ */
+
+pub fn euler(mut x0: f64, x: f64, mut y: f64, n: i64, deriv: fn(f64, f64) -> f64) -> f64 {
+    let h : f64 = (x-x0)/(n as f64).abs();
+    for _ in 1..n {
+        y += h*deriv(x0, y);
+        x0 = x0 + h;
+    }
+    return y;
+}
+
 /* Runge-Kutta 2 
  * Function: Performs a runge-kutta interation solver of order 2 for approximating diff eqs
  * Parameters:
@@ -7,7 +29,7 @@
  * x0 - the inital function point
  * n - the number of steps
  * x - the point to approximate at
- * y - the inital y value
+ * y - the initial y value
  * Returns: 
  * The approximate solution to the ODE at x
  */
