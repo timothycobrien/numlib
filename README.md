@@ -9,10 +9,10 @@ A simple numerical algorithms library. Contains most of the numerical algorithms
     - [ ] adaptive simpsons rule
     - [x] 3/8 simpson's rule
 - [ ] ODE Solvers
-    - [ ] Runge-Kutta 2
-    - [ ] Runge-Kutta 4 (Explicit)
+    - [x] Runge-Kutta 2
+    - [x] Runge-Kutta 4 (Explicit)
     - [ ] Runge-kutta 4 (Adaptive)
-    - [ ] Euler's 
+    - [x] Euler's 
     - [ ] First Order Exponential Integrater
     - [ ] Adam's Bashforth
     - [ ] Adam's Moulton
