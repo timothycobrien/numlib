@@ -3,10 +3,10 @@
 
 A simple numerical algorithms library. Contains most of the numerical algorithms found in an introduction to numerical analysis class. Contributions are warmly welcome :). For any requests, please add an issue. Below is a list of implemented and planned methods. 
 
-- [ ] integratation techniques
+- [x] integratation techniques
     - [x] composite trapezoid rule
     - [x] simpsons rule
-    - [ ] adaptive simpsons rule
+    - [x] adaptive simpsons rule
     - [x] 3/8 simpson's rule
 - [ ] ODE Solvers
     - [x] Runge-Kutta 2
