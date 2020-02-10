@@ -9,6 +9,7 @@ description = "A simple numerical library implementing common numberical algorit
 homepage = "https://github.com/luke-bhan/numlib"
 respository = "https://github.com/luke-bhan/numlib"
 documentation = "Most documentation is done in the comments for the methods. More Coming Soon"
+exclude = ".gitignore"
 
 [badges]
 travis-ci = {repository = "luke-bhan/numlib", branch = "master"}
