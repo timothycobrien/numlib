@@ -8,7 +8,7 @@ license = "MIT"
 description = "A simple numerical library implementing common numberical algorithms in rust"
 homepage = "https://github.com/luke-bhan/numlib"
 respository = "https://github.com/luke-bhan/numlib"
-documentation = "Most documentation is done in the comments for the methods. More Coming Soon"
+documentation = "https://github.com/luke-bhan/numlib/blob/master/README.md"
 exclude = [".gitignore"]
 
 [badges]
