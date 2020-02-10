@@ -88,7 +88,6 @@ pub fn runge_kutta_4(mut x0: f64, x: f64, mut y: f64, n: i64, deriv: fn(f64, f64
  * Returns:
  * The approximate solution to the ODE at x
  */
-
 pub fn adams_brashforth(x0: f64, x: f64, mut y0: f64, n: i64, deriv: fn(f64, f64)->f64) -> f64{
     let h: f64 = (x-x0)/(n as f64).abs();
     // Euler approximation for first step
@@ -103,4 +102,44 @@ pub fn adams_brashforth(x0: f64, x: f64, mut y0: f64, n: i64, deriv: fn(f64, f64
     }
     return y1;
 }
+
+/* Adams-Moulton
+ * Function: Uses the two steps Adams-Moulton method by using euler to calculate the first point
+ * point
+ * Paramters:
+ * deriv - the derivative of the function
+ * x0 = the initial function point
+ * n - the number of steps
+ * x - the point to approximate at 
+ * y0 - the inital y value
+ * Returns:
+ * The approximate solution to the ODE at x
+ */
+pub fn adams_moulton(mut x0: f64, x: f64, mut y0: f64, n: i64, deriv: fn(f64, f64) -> f64) -> f64 {
+    let h: f64 = (x-x0)/(n as f64).abs();
+    // Euler Approx
+    let mut y1: f64 = y0 + h*deriv(x0, y0);
+    let mut x1: f64 = x0+h;
+    let mut y2: f64 = y1 + h*deriv(x1, y1);
+    let mut x2: f64 = x1+h;
+    for _ in 1..(n-2){
+        let tmp: f64 = y2;
+        y2 = y1 + h*((5.0/12.0)*deriv(x2, y2) + (2.0/3.0)*deriv(x1, y1) - (1.0/12.0)*deriv(x0, y0));
+        y0 = y1;
+        x0 = x1;
+        y1 = tmp;
+        x1 = x2;
+        x2 += h;
+    }
+    return y2;
+}
+
+        
+
+
+
+
+
+
+
 
