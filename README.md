@@ -1,5 +1,6 @@
 # numlib
 [![Build Status](https://travis-ci.com/luke-bhan/numlib.svg?branch=master)](https://travis-ci.com/luke-bhan/numlib)
+[![Crates.io](https://img.shields.io/crates/v/numlib)](https://crates.io/crates/numlib)
 
 A simple numerical algorithms library. Contains most of the numerical algorithms found in an introduction to numerical analysis class. Contributions are warmly welcome :). For any requests, please add an issue. Below is a list of implemented and planned methods. 
 
