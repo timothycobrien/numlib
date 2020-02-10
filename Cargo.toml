@@ -4,7 +4,11 @@ version = "0.1.0"
 authors = ["Luke Bhan  <luke.bhan@vanderbilt.edu>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+keywords = ["integreate", "numerical", "Runge-Kutta", "Trapezoid"]
+license = "MIT"
+
+[badges]
+travis-ci = {repository = "luke-bhan/numlib", branch = "master"}
 
 [dependencies]
 assert_approx_eq = "1.1.0"
