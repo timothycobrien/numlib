@@ -13,9 +13,8 @@ A simple numerical algorithms library. Contains most of the numerical algorithms
     - [x] Runge-Kutta 4 (Explicit)
     - [ ] Runge-kutta 4 (Adaptive)
     - [x] Euler's 
-    - [ ] First Order Exponential Integrater
-    - [ ] Adam's Bashforth
-    - [ ] Adam's Moulton
+    - [x] Adam's Bashforth
+    - [x] Adam's Moulton
 - [ ] Fourier Series
     - [ ] DFFT
     - [ ] Maybe some Linear Algebra Integrations - Contributions Welcome
