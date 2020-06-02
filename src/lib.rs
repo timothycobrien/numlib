@@ -1,3 +1,4 @@
-// Library file for numerical algorithms 
-pub mod integrate;
-pub mod diff_eq_solver;
+mod bignum;
+
+#[cfg(feature = "benchmark-internals")]
+pub use bignum::*;

@@ -1,18 +1,53 @@
 [package]
 name = "numlib"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Luke Bhan  <luke.bhan@vanderbilt.edu>"]
 edition = "2018"
-keywords = ["integreate", "numerical", "Runge-Kutta", "Trapezoid"]
-license = "MIT"
-description = "A simple numerical library implementing common numberical algorithms in rust"
-homepage = "https://github.com/luke-bhan/numlib"
-respository = "https://github.com/luke-bhan/numlib"
-documentation = "https://github.com/luke-bhan/numlib/blob/master/README.md"
-exclude = [".gitignore"]
 
-[badges]
-travis-ci = {repository = "luke-bhan/numlib", branch = "master"}
+[features]
+benchmark-internals = []
 
-[dependencies]
-assert_approx_eq = "1.1.0"
+[[bench]]
+name = "ctor"
+path = "benches/bignum/constructor.rs"
+harness = false
+required-features = ["benchmark-internals"]
+
+[[bench]]
+name = "compare"
+path = "benches/bignum/compare.rs"
+harness = false
+required-features = ["benchmark-internals"]
+
+[[bench]]
+name = "mod"
+path = "benches/bignum/modulo.rs"
+harness = false
+required-features = ["benchmark-internals"]
+
+[[bench]]
+name = "mul"
+path = "benches/bignum/mul.rs"
+harness = false
+required-features = ["benchmark-internals"]
+
+[[bench]]
+name = "add"
+path = "benches/bignum/add.rs"
+harness = false
+required-features = ["benchmark-internals"]
+
+[[bench]]
+name = "sub"
+path = "benches/bignum/sub.rs"
+harness = false
+required-features = ["benchmark-internals"]
+
+[[bench]]
+name = "fft"
+path = "benches/bignum/utils/fft.rs"
+harness = false
+required-features = ["benchmark-internals"]
+
+[dev-dependencies]
+criterion = "0.3.2"
