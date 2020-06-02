@@ -6,6 +6,9 @@ impl Ord for Bignum {
         let greater: Ordering;
         let less: Ordering;
         if self.is_neg ^ other.is_neg {
+            if (self.dec.len() + other.dec.len() + self.int.len() + other.int.len()) == 0 {
+                return Ordering::Equal;
+            }
             return other.is_neg.cmp(&self.is_neg);
         } else if other.is_neg && self.is_neg {
             greater = Ordering::Less;
@@ -42,7 +45,7 @@ impl Ord for Bignum {
             }
         }
 
-        match other.dec.len().cmp(&self.dec.len()) {
+        match self.dec.len().cmp(&other.dec.len()) {
             Ordering::Equal => Ordering::Equal,
             Ordering::Less => less,
             Ordering::Greater => greater,
@@ -107,15 +110,23 @@ mod tests {
             equal1: "1 = 1"
             equal2: "1.1 = 1.1"
             equal3: "-25.25 = -25.25"
+            equal4: "1.0 = 1"
+            equal5: "0.0 = 0"
+            equal6: "0 = -0"
+            equal7: "000 = 0"
+            equal8: "000 = 0.0"
+            equal9: "0.000 = 0.0"
             not_equal1: "1 != 2"
             not_equal2: "1.1 != 1.2"
             not_equal3: "2.1 != 1.1"
             not_equal4: "-1.1 != 1.1"
+            not_equal5: "1.1 != 1"
             less_than1: "1 < 2"
             less_than2: "1.1 < 2.1"
             less_than3: "2.1 < 2.2"
             less_than4: "-1 < 1"
             less_than5: "-2 < -1"
+            less_than6: "1 < 1.8"
             less_than_equal1: "1 < 2"
             less_than_equal2: "1.1 <= 2.1"
             less_than_equal3: "2.1 <= 2.2"
@@ -124,11 +135,17 @@ mod tests {
             less_than_equal6: "1 <= 1"
             less_than_equal7: "1.1 <= 1.1"
             less_than_equal8: "-25.25 <= -25.25"
+            less_than_equal9: "1 <= 1.1"
+            less_than_equal10: "1 <= 1.0"
             greater_than1: "2 > 1"
             greater_than2: "2.1 > 1.1"
             greater_than3: "2.2 > 2.1"
             greater_than4: "1 > -1"
             greater_than5: "-1 > -2"
+            greater_than6: "1.2 > 1"
+            greater_than7: "1 > .5"
+            greater_than8: ".5 > .2"
+            greater_than9: ".5 > -1"
             greater_than_equal1: "2 >= 1"
             greater_than_equal2: "2.1 >= 1.1"
             greater_than_equal3: "2.2 >= 2.1"
@@ -137,6 +154,8 @@ mod tests {
             greater_than_equal6: "1 >= 1"
             greater_than_equal7: "1.1 >= 1.1"
             greater_than_equal8: "-25.25 >= -25.25"
+            greater_than_equal9: "1.1 >= 1"
+            greater_than_equal10: "1 >= 1.0"       
         }
     }
 }

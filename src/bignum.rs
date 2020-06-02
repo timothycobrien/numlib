@@ -70,6 +70,9 @@ impl Bignum {
         if !dec.is_empty() && dec.iter().all(|&i| i == 0) {
             dec.clear();
         }
+        if !int.is_empty() && int.iter().all(|&i| i == 0) {
+            int.clear();
+        }
         Ok(Bignum {
             is_neg,
             int: int.into_iter().rev().collect(),
