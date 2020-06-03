@@ -7,6 +7,7 @@ mod mul;
 mod negate;
 mod sub;
 mod utils;
+mod divide;
 
 pub use add::*;
 pub use compare::*;
